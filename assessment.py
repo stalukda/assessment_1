@@ -15,14 +15,14 @@ def all_odd(numbers):
         >>> all_odd([2, -6, 8])
         []
     """
-#SOLUTION #1 (using list comprehension):
+#SOLUTION #1: use list comprehension to find odd numbers:
 
     odd_numbers = [number for number in numbers if number%2 != 0] 
     return odd_numbers
 
 all_odd([1, 2, 7, -5])
 
-#SOLUTION #2 (using try and except to handle invalid inputs):
+#SOLUTION #2: use a for loop to return odd numbers and try and except to handle invalid inputs:
 
     # odd_numbers = []
 
@@ -62,8 +62,11 @@ def print_indices(items):
         3 Volvo
     
     """
-    for count, item in enumerate(items):
-        print count, item 
+
+    """SOLUTION: use enumerate method (which counts for us) to return index and item"""
+
+    for index, item in enumerate(items):
+        print index, item 
 
 print_indices(["Toyota", "Jeep", "Volvo"])
 
@@ -94,6 +97,9 @@ def foods_in_common(foods1, foods2):
         []
 
     """
+
+    """SOLUTION: find intersection by converting lists to 
+    sets and return again converted back as a list"""
 
     common = set(foods1) & set(foods2)
     common = sorted(list(common)) 
@@ -147,6 +153,8 @@ def largest_n_items(items, n):
         >>> largest_n_items([3, 3, 3, 2, 1], 2)
         [3, 3]
     """
+
+    """SOLUTION: sort items and return them using list slicing"""
 
     if n > 0:
         sorted_items = sorted(items)
