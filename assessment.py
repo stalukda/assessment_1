@@ -15,20 +15,27 @@ def all_odd(numbers):
         >>> all_odd([2, -6, 8])
         []
     """
-    #take an input list 
-    #for each number in the list
-    #if divide by 2 modulo != 0
-    #return it  
+#SOLUTION #1 (using list comprehension):
 
-    odd_numbers = []
-
-    for number in numbers:
-        if number%2 != 0: 
-            odd_numbers.append(number)
-
+    odd_numbers = [number for number in numbers if number%2 != 0] 
     return odd_numbers
 
 all_odd([1, 2, 7, -5])
+
+#SOLUTION #2 (using try and except to handle invalid inputs):
+
+    # odd_numbers = []
+
+    # for number in numbers:
+    #     try: 
+    #         if number%2 != 0: 
+    #             odd_numbers.append(number)
+    #     except: 
+    #             print("Oops!  That was not a valid number or list of numbers.  Try again...")
+    #             break 
+    # return odd_numbers
+
+# all_odd(["hello", "hi"])
 
 def print_indices(items):
     """Print index of each item in list, followed by item itself.
@@ -57,10 +64,6 @@ def print_indices(items):
     """
     for count, item in enumerate(items):
         print count, item 
-
-    #Alt method which doesn't account for duplicates (yet... still working on it)
-    # for item in items: 
-    #     print items.index(item), item 
 
 print_indices(["Toyota", "Jeep", "Volvo"])
 
